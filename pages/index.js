@@ -14,7 +14,7 @@ export async function getStaticProps(){
 
     return {
         props: {unpaidObjArray, nameObj},
-        revalidate: 1,
+        revalidate: 60,
     }
 
 }
