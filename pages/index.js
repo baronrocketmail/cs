@@ -5,13 +5,11 @@ import NavLinks from "./Components/NavLinks";
 import {useState, useEffect} from "react";
 import {fetchPropertyInfoObj, fetchUnpaidObjArray} from "./api/dataFetching.mjs";
 
+
+
 export default function Home() {
 
-    export async function getStaticProps(){
-        return {
-            revalidate: 10,
-        }
-    }
+
 
     const [unpaidObjArray, setUnpaidObjArray] = useState([])
 
