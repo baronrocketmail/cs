@@ -12,7 +12,7 @@ export default function Home() {
     useEffect(() => {
         fetchUnpaidObjArray().then( unpaidObjArray => {
                 fetchPropertyInfoObj(). then( propertyInfoObj=> {
-                    var objArray = [];
+                    let objArray = [];
                     objArray.push(...[{name: propertyInfoObj.name, url: "/"}, {name: "autopay", url: "/autopay"}]);
                     objArray.push(...unpaidObjArray)
                     objArray.push(...[{name: "...", url:"/log"}])
