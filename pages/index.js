@@ -17,6 +17,8 @@ export async function getStaticProps(){
 }
 
 export default function Home(props) {
+    console.log(props.nameObj)
+    console.log(props.unpaidObjArray)
     let objArray = []
     objArray.push(...[{name: props.nameObj.name, url:"/"}, {name: "autopay", url:"/autopay"}])
     objArray.push(...props.unpaidObjArray)

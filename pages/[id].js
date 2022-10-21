@@ -31,6 +31,7 @@ export async function getStaticProps(context){
 export default function Specific(props){
 
     const clientSecret = props.paymentInfo.clientSecret
+    console.log(props.paymentInfo)
     const appearance = {
         theme: 'flat',
         variables: {
