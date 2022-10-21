@@ -31,7 +31,7 @@ export default function Home(props) {
 
     objArray.push(...[{name: props.nameObj.name, url:"/"}, {name: "autopay", url:"/autopay"}])
     objArray.push(...props.unpaidObjArray)
-    objArray.push({name: "...", url:"/"})
+    objArray.push({name: "...", url:"/log"})
 
 
     return(
