@@ -1,15 +1,8 @@
-@font-face {
-  font-family: "SF-Pro";
-  font-style: normal;
-  font-display: optional;
-  src: url(../public/SF-Pro.woff) format('woff'), url(../public/SF-Pro.ttf) format('truetype');
-}
 
 html{
   font-family: 'Roboto', sans-serif;
   font-size: large;
 }
-
 
 a{
   text-decoration: none;
@@ -41,7 +34,6 @@ a:hover{
   margin-bottom:8px;
 }
 
-
 form {
   margin-left: auto;
   margin-right: auto;
@@ -53,7 +45,6 @@ form {
   border-radius: 7px;
   padding: 40px;
 }
-
 
 #payment-message {
   color: rgb(105, 115, 134);
