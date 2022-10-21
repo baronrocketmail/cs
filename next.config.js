@@ -8,7 +8,7 @@ module.exports = {
     return [
       {
         source: '/viewlease',
-        destination: 'https://storage.googleapis.com/viewlease/viewlease.pdf',
+        destination: 'https://storage.googleapis.com/viewlease/ls%20copy.pdf',
         permanent: false,
         basePath: false
       },
