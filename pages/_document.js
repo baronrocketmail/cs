@@ -5,6 +5,7 @@ export default function Document() {
         <Html>
             <Head>
             <link rel="preload" href="/public/SF-Pro.woff2.woff2" as="font" type="font/woff2" crossOrigin/>
+            <link rel="preload" href="/public/SF-Pro.woff2.ttf" as="font" type="font/truetype" crossOrigin/>
             </Head>
             <body>
             <Main />
