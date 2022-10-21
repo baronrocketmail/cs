@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'SFP';
+  font-family: "SF-Pro";
   font-style: normal;
   font-display: optional;
   src: url(../public/SF-Pro.woff) format('woff');
 }
 
 html{
-  font-family: "SFP";
+  font-family: "SF-Pro";
   font-size: large;
 }
 
