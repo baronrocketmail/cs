@@ -4,13 +4,7 @@ export default function Document() {
     return (
         <Html>
             <Head>
-                <link
-                    rel="preload"
-                    href="https://storage.googleapis.com/ponn/SF-Pro1.woff"
-                    as="font"
-                    type="font/woff"
-                    crossOrigin
-                />
+            <link rel="preload" href="/public/SF-Pro.woff2.woff2" as="font" type="font/woff2" crossOrigin/>
             </Head>
             <body>
             <Main />
