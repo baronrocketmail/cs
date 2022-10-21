@@ -8,8 +8,6 @@ export default function Document() {
             {/*<link rel="preload" href="/public/SF-Pro.woff2.ttf" as="font" type="font/truetype" crossOrigin/>*/}
             {/*<link rel="preload" href="/public/SF-Pro.woff2.woff2" as="font" crossOrigin="anonymous"/>*/}
             {/*<link rel="preload" href="https://storage.googleapis.com/ponn/SF-Pro.woff" as="font" crossOrigin="anonymous"/>*/}
-                <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
                         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
                               rel="stylesheet"/>
 
