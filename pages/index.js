@@ -26,9 +26,6 @@ export default function Home(props) {
     objArray.push({name: "...", url:"/log"})
     return(
         <div>
-            <Head>
-                <title>18572 Cull Canyon</title>
-            </Head>
             <NavLinks objArry = {objArray}/>
         </div>
     )
