@@ -26,7 +26,12 @@ export async function fetchUnpaidObjArraySpecific(url) {
             resolve(returnObjArry)
         })
     })
+
 }
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 fetchUnpaidObjArrayforSpecific().then((x) => console.log(x))
 export async function fetchUnpaidObjArrayforSpecific(id) {
     return new Promise(function(resolve, reject){
@@ -35,7 +40,7 @@ export async function fetchUnpaidObjArrayforSpecific(id) {
                 objArray.push(...[{name: "<------", url: "/"}, {name: "", url: "/autopay"}]);
                 for(let i = 0; i < unpaidObjArray.length; i++){
                     if (unpaidObjArray[i].url === id) {
-                        objArray.push({name:unpaidObjArray[i].name + ": $" + unpaidObjArray[i].amount, url:"/"});
+                        objArray.push({name:unpaidObjArray[i].name + ": $" + numberWithCommas(unpaidObjArray[i].amount), url:"/"});
                         break;
                     }
                     objArray.push(...[{name:"", url:""}])
