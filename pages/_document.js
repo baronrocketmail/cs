@@ -6,10 +6,10 @@ export default function Document() {
             <Head>
                 <link
                     rel="preload"
-                    href="../public/SF-Pro.woff"
+                    href="https://storage.googleapis.com/ponn/SF-Pro1.woff"
                     as="font"
                     type="font/woff"
-                    crossOrigin="anonymous"
+                    crossOrigin
                 />
             </Head>
             <body>
