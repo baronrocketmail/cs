@@ -23,7 +23,7 @@ export async function fetchUnpaidObjArraySpecific(url) {
         getDocs(allUnpaidPaymentsCollection).then(snapshot => {
             let returnObjArry = [];
             snapshot.docs.forEach(elem => returnObjArry.push(elem.data()));
-            resolve(returnObjArry)
+            resolve(...returnObjArry)
         })
     })
 
@@ -32,7 +32,6 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-fetchUnpaidObjArrayforSpecific().then((x) => console.log(x))
 export async function fetchUnpaidObjArrayforSpecific(id) {
     return new Promise(function(resolve, reject){
         fetchUnpaidObjArray().then( unpaidObjArray => {

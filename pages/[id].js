@@ -7,8 +7,8 @@ import {
     fetchUnpaidObjArrayPaths,
     fetchUnpaidObjArraySpecific
 } from "./api/dataFetching.mjs";
-
-
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./Components/CheckoutForm";
 
 const stripePromise = loadStripe("pk_live_51LlESTC3Ie0MSAM2CQtveok1BNyKHlkw8W0aVunFTMYjMAGi0y6dEaHreNGy0TC4oRkfSMwOkcXUftn0oTlwDaBg00bnHjzls6");
 export async function getStaticPaths(){
@@ -20,28 +20,34 @@ export async function getStaticPaths(){
 
 }
 export async function getStaticProps(context){
-    const info = await fetchUnpaidObjArraySpecific(context.params.id)
+    const paymentInfo = await fetchUnpaidObjArraySpecific(context.params.id)
     const objArray = await fetchUnpaidObjArrayforSpecific(context.params.id)
     return {
-        props: {info, objArray},
+        props: {paymentInfo, objArray},
         revalidate: 1,
     }
 }
 
 export default function Specific(props){
-    const [clientSecret, setClientSecret] = useState("");
-
+    console.log(props.paymentInfo)
+    const clientSecret = props.paymentInfo.clientSecret
     const appearance = {
         theme: 'minimal',
     };
     const options = {
-        clientSecret,
+        clientSecret: clientSecret,
         appearance,
     };
-
-    const [unpaidObjArray, setUnpaidObjArray] = useState([])
-
     return(
+    <div>
         <NavLinks objArry ={props.objArray}/>
+        <div className="App">
+            {clientSecret && (
+                <Elements options={options} stripe={stripePromise}>
+                    <CheckoutForm />
+                </Elements>
+            )}
+        </div>
+    </div>
     )
 }

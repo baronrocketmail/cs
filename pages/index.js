@@ -5,6 +5,7 @@ import NavLinks from "./Components/NavLinks";
 import {useState, useEffect} from "react";
 import {fetchPropertyInfoObj, fetchUnpaidObjArray} from "./api/dataFetching.mjs";
 import {urlObjectKeys} from "next/dist/shared/lib/router/utils/format-url";
+import "../styles/PaymentElement.module.css"
 
 export async function getStaticProps(){
     const unpaidObjArray = await fetchUnpaidObjArray()
