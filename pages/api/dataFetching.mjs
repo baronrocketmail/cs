@@ -96,6 +96,8 @@ export async function fetchUnpaidObjArrayPaths() {
     })
 }
 
+
+
 export async function fetchNotUnpaidObjArray(){
     return new Promise(function(resolve, reject) {
         const notUnpaidQuery = query(collection(getFirestore(),"units/18572 cull canyon/payments"), where("status", "!=", "unpaid"))
