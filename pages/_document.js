@@ -6,9 +6,9 @@ export default function Document() {
             <Head>
                 <link
                     rel="preload"
-                    href="../public/SF-Pro.woff2"
+                    href="../public/SF-Pro.woff"
                     as="font"
-                    type="font/woff2"
+                    type="font/woff"
                     crossOrigin="anonymous"
                 />
             </Head>
