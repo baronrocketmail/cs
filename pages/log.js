@@ -21,13 +21,6 @@ async function  formatNotUnpaidObjArrayForTable(){
 
     })
 }
-//
-// function createTableRows(objArray){
-//     let rows = []
-//     for(let elem in objArray){
-//         rows.push(createData())
-//     }
-// }
 
 function formatStatus(obj){
     let formattedStatus = []
@@ -41,8 +34,6 @@ function formatStatus(obj){
     return formattedStatus
 }
 
-
-
 export async function getStaticProps(){
     const objArray = await fetchUnpaidObjArrayforLog()
     const logObjArray = await formatNotUnpaidObjArrayForTable()
@@ -53,22 +44,8 @@ export async function getStaticProps(){
     }
 }
 
-// function createData(name, calories, fat, carbs, protein) {
-//     return { name, calories, fat, carbs, protein };
-// }
-//
-// const rows = [
-//     createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//     createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//     createData('Eclair', 262, 16.0, 24, 6.0),
-//     createData('Cupcake', 305, 3.7, 67, 4.3),
-//     createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
 function BasicTable(props) {
-
     console.log(props.logObjArray)
-
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
