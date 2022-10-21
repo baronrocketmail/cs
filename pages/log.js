@@ -74,9 +74,9 @@ function BasicTable(props) {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
+                        <TableCell> </TableCell>
+                        <TableCell align="right">progress</TableCell>
+                        <TableCell align="right">total</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
