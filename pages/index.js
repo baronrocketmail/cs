@@ -17,6 +17,7 @@ export async function getStaticProps(){
 }
 
 export default function Home(props) {
+
     console.log(props.nameObj)
     console.log(props.unpaidObjArray)
     let objArray = []
@@ -25,6 +26,9 @@ export default function Home(props) {
     objArray.push({name: "...", url:"/log"})
     return(
         <div>
+            <Head>
+                <title>18572 Cull Canyon</title>
+            </Head>
             <NavLinks objArry = {objArray}/>
         </div>
     )
