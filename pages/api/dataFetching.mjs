@@ -27,6 +27,26 @@ export async function fetchUnpaidObjArraySpecific(url) {
         })
     })
 }
+fetchUnpaidObjArrayforSpecific().then((x) => console.log(x))
+export async function fetchUnpaidObjArrayforSpecific(id) {
+    return new Promise(function(resolve, reject){
+        fetchUnpaidObjArray().then( unpaidObjArray => {
+                let objArray = [];
+                objArray.push(...[{name: "<------", url: "/"}, {name: "", url: "/autopay"}]);
+                for(let i = 0; i < unpaidObjArray.length; i++){
+                    if (unpaidObjArray[i].url === id) {
+                        objArray.push({name:unpaidObjArray[i].name + ": $" + unpaidObjArray[i].amount, url:"/"});
+                        break;
+                    }
+                    objArray.push(...[{name:"", url:""}])
+                }
+                resolve(objArray)
+            }
+        );
+    })
+
+}
+
 
 export async function fetchUnpaidObjArray() {
     const allUnpaidPaymentsCollection = query(allPaymentsCollection, where("status", "==", "unpaid"))
@@ -35,6 +55,21 @@ export async function fetchUnpaidObjArray() {
             let returnObjArry = [];
             snapshot.docs.forEach(elem => returnObjArry.push(elem.data()))
             resolve(returnObjArry)
+        })
+    })
+}
+
+export async function fetchUnpaidObjArrayPaths() {
+    const allUnpaidPaymentsCollection = query(allPaymentsCollection, where("status", "==", "unpaid"))
+    return new Promise(function(resolve, reject) {
+        getDocs(allUnpaidPaymentsCollection).then(snapshot => {
+            let returnObjArry = [];
+            snapshot.docs.forEach(elem => returnObjArry.push(elem.data()))
+            let returnObjArray2 = []
+            for(let elem in returnObjArry) {
+                returnObjArray2.push({params: {id: returnObjArry[elem].url}})
+            }
+            resolve(returnObjArray2)
         })
     })
 }
