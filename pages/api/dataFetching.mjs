@@ -53,6 +53,24 @@ export async function fetchUnpaidObjArrayforSpecific(id) {
 }
 
 
+export async function fetchUnpaidObjArrayforLog(id) {
+    return new Promise(function(resolve, reject){
+        fetchUnpaidObjArray().then( unpaidObjArray => {
+                let objArray = [];
+                objArray.push(...[{name: "<------", url: "/"}, {name: "", url: "/autopay"}]);
+                for(let i = 0; i < unpaidObjArray.length; i++){
+                    objArray.push(...[{name:"", url:""}])
+                }
+                objArray.push(...[{name:"...", url:"/"}])
+
+            resolve(objArray)
+            }
+        );
+    })
+
+}
+
+
 export async function fetchUnpaidObjArray() {
     const allUnpaidPaymentsCollection = query(allPaymentsCollection, where("status", "==", "unpaid"))
     return new Promise(function(resolve, reject) {
