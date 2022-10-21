@@ -7,8 +7,8 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: 'https://stackoverflow.com/posts/66662033',
+        source: '/viewlease',
+        destination: 'https://storage.googleapis.com/viewlease/viewlease.pdf',
         permanent: false,
         basePath: false
       },
