@@ -1,4 +1,4 @@
-import NavLinks from "./Components/NavLinks";
+import NavLinks from "../Components/NavLinks";
 import {useState} from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -8,7 +8,7 @@ import {
     fetchUnpaidObjArraySpecific
 } from "./api/dataFetching.mjs";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./Components/CheckoutForm";
+import CheckoutForm from "../Components/CheckoutForm";
 
 const stripePromise = loadStripe("pk_live_51LlESTC3Ie0MSAM2CQtveok1BNyKHlkw8W0aVunFTMYjMAGi0y6dEaHreNGy0TC4oRkfSMwOkcXUftn0oTlwDaBg00bnHjzls6");
 export async function getStaticPaths(){
@@ -29,7 +29,6 @@ export async function getStaticProps(context){
 }
 
 export default function Specific(props){
-    console.log(props.paymentInfo)
     const clientSecret = props.paymentInfo.clientSecret
     const appearance = {
         theme: 'minimal',

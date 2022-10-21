@@ -1,4 +1,4 @@
-import NavLinks from "./Components/NavLinks";
+import NavLinks from "../Components/NavLinks";
 
 export default function Autopay(){
     return(

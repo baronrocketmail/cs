@@ -6,7 +6,7 @@ export default function NavLinks(props){
     for (let elem in props.objArry){
         navLinks.push(
             <div>
-                <Link href={props.objArry[elem].url}>{props.objArry[elem].name}</Link>
+                <Link key={props.objArry[elem].url} href={props.objArry[elem].url}>{props.objArry[elem].name}</Link>
                 <br/>
             </div>
         )

@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import {fetchUnpaidObjArrayforLog} from "./api/dataFetching.mjs";
-import NavLinks from "./Components/NavLinks";
+import NavLinks from "../Components/NavLinks";
 
 export async function getStaticProps(){
     const objArray = await fetchUnpaidObjArrayforLog()
