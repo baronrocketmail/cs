@@ -9,21 +9,30 @@ import "../styles/PaymentElement.module.css"
 
 export async function getStaticProps(){
     const unpaidObjArray = await fetchUnpaidObjArray()
-    const nameObj = await fetchPropertyInfoObj()
+    const PropertyInfoObj = await fetchPropertyInfoObj()
     return {
-        props: {unpaidObjArray, nameObj},
+        props: {unpaidObjArray, PropertyInfoObj},
         revalidate: 1,
     }
 }
 
 export default function Home(props) {
 
-    console.log(props.nameObj)
+    console.log(21)
+    console.log(props.PropertyInfoObj)
     console.log(props.unpaidObjArray)
     let objArray = []
-    objArray.push(...[{name: props.nameObj.name, url:"/"}, {name: "autopay", url:"/autopay"}])
-    objArray.push(...props.unpaidObjArray)
-    objArray.push({name: "...", url:"/log"})
+
+    objArray.push({name: props.PropertyInfoObj.name, url:"/"})
+    if (props.PropertyInfoObj.applicationsOpen) {
+        objArray.push({name: "apply now", url:"/log"})
+        objArray.push({name: "view lease", url:"/viewlease"})
+        objArray.push({name: "..." ,url: "/explainer"})
+    } else {
+        objArray.push({name: "autopay", url:"/autopay"})
+        objArray.push(...props.unpaidObjArray)
+        objArray.push({name: "...", url:"/log"})
+    }
     return(
         <div>
             <NavLinks objArry = {objArray}/>

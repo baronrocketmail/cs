@@ -108,6 +108,7 @@ export async function fetchNotUnpaidObjArray(){
         })
     })
 }
+
 export async function fetchPropertyInfoObj() {
     const propertyInfoCollection = collection(firestore, "/units/18572 cull canyon/info")
     return new Promise(function(resolve, reject) {
